@@ -1,3 +1,88 @@
+body{
+    font-family: sans-serif;
+    background-color: rgb(212, 212, 212);
+    margin: 0;
+    display: grid;
+    grid-template-columns: [first] 40% [line2] 220px [line3] 80px [end] 35%;
+    grid-template-rows: [first] 10% [screen] 100px [clear] 50px [button] 280px;
+}
+.container{
+    display: grid;
+    grid-template-columns: [first] 220px [line3] 80px;
+    grid-template-rows: [first] 100px [clear] 50px [rest] 280px;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    background: rgb(45,45,45);
+    outline: 1px solid black;
+    border-radius: 10px;
+}
+
 .screen{
-    height: 30px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    margin: 17px;
+    padding: 15px;
+    background: rgb(207,227,228);
+    font-size: 2em;
+    outline: 1px solid black;
+    border-radius: 5px;
+}
+
+#result{
+    margin: 0;
+    color: rgb(34,34,34);
+}
+
+.screenOperators{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    justify-self: right;
+    margin-top: 8px;
+    margin-right: 17px;
+    font-size: 0.7em;
+}
+
+.calculator{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    justify-self: end;
+    margin-left: 15px;
+}
+
+.calculator button{
+    height: 60px;
+    width: 60px;
+    margin: 2px;
+}
+
+.rightPart{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    justify-self: right;
+}
+
+.rightPart button{
+    height: 60px;
+    width: 60px;
+    margin: 2px;
+}
+
+
+button {
+    font-size: 2em;
+    border-radius: 10px;
+    background-color: rgb(90,90,88);
+    color: white;
+    border-style: none;
+    border: black solid 1px;
 }

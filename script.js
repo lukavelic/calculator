@@ -9,22 +9,18 @@ function operate() {
         let runningTotal = numberStorage.reduce(function (total, currentValue) {return total + currentValue})
         numberStorage.length = 0
         numberStorage.unshift(runningTotal);
-        console.log(numberStorage)
     } else if(operatorStorage[0] == ' -') {
         let runningTotal = numberStorage.reduce(function (total, currentValue) {return total - currentValue})
         numberStorage.length = 0
         numberStorage.unshift(runningTotal);
-        console.log(numberStorage)
     } else if(operatorStorage[0] == ' *') {
         let runningTotal = numberStorage.reduce(function (total, currentValue) {return total * currentValue})
         numberStorage.length = 0
         numberStorage.unshift(runningTotal);
-        console.log(numberStorage)
     } else if(operatorStorage[0] == ' /') {
         let runningTotal = numberStorage.reduce(function (total, currentValue) {return total / currentValue})
         numberStorage.length = 0
         numberStorage.unshift(runningTotal);
-        console.log(numberStorage)
     }
 }
 
@@ -42,7 +38,6 @@ function pushNumberToArray() {
 
 function collectOperator(event) {
     operatorStorage.push(event.target.id);
-    console.log(operatorStorage)
 
 }
 
@@ -50,7 +45,6 @@ function evaluateEquation() {
     if(operatorStorage.length > 1) {
         operate();
         display.innerText = `${numberStorage[0]}`
-        console.log(equalsValue)
         operatorStorage.shift();
     }
 }
@@ -68,14 +62,11 @@ function displayUpdateNumber(event) {
     } else {     
         display.innerText += event.target.id;
         numberStorage[0] = equalsValue;
-        console.log(equalsValue)
         return equalsBoolean = false;
     }
 }
-
 function displayUpdateOperator(event) {
     display.innerText += `${event.target.id}\u00A0`
-    console.log(operatorStorage)
 }
 
 function displayUpdateEquals() {
@@ -89,6 +80,8 @@ function displayAndStorageClear() {
     firstValue = 0;
     numberStorage.length = 0;
     operatorStorage.length = 0;
+    equalsValue = 0;
+    equalsBoolean = false;
 }
 
 function equalsResetStorage() {
